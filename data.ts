@@ -1,5 +1,11 @@
 import { Project, Profile } from './types';
 
+// Helper function to get image URL for Vite
+// Vite will process these paths correctly when images exist
+function getImageUrl(relativePath: string): string {
+  return new URL(relativePath, import.meta.url).href;
+}
+
 export const projects: Project[] = [
   {
     slug: "nirvaan",
@@ -7,7 +13,13 @@ export const projects: Project[] = [
     category: "Residential",
     year: "2023",
     location: "Hyderabad, India",
-    description: "A penthouse in the Deccan region embodying a super minimalist approach. A muted color palette combined with tactile materials enhances the sensory experience."
+    description: "A penthouse in the Deccan region embodying a super minimalist approach. A muted color palette combined with tactile materials enhances the sensory experience.",
+    thumbnail: getImageUrl('../assets/images/nirvaan/thumbnail.jpg'),
+    gallery: [
+      getImageUrl('../assets/images/nirvaan/image-1.jpg'),
+      getImageUrl('../assets/images/nirvaan/image-2.jpg'),
+      getImageUrl('../assets/images/nirvaan/image-3.jpg'),
+    ]
   },
   {
     slug: "svara",
@@ -15,7 +27,13 @@ export const projects: Project[] = [
     category: "Residential",
     year: "2023",
     location: "Kanpur, India",
-    description: "A five-room penthouse designed with a vibrant palette and Indian art forms. Interiors seamlessly integrate green spaces with strategically placed glass doors."
+    description: "A five-room penthouse designed with a vibrant palette and Indian art forms. Interiors seamlessly integrate green spaces with strategically placed glass doors.",
+    thumbnail: getImageUrl('../assets/images/svara/thumbnail.jpg'),
+    gallery: [
+      getImageUrl('../assets/images/svara/image-1.jpg'),
+      getImageUrl('../assets/images/svara/image-2.jpg'),
+      getImageUrl('../assets/images/svara/image-3.jpg'),
+    ]
   },
   {
     slug: "stories-pavilion",
@@ -23,7 +41,13 @@ export const projects: Project[] = [
     category: "College Work",
     year: "2024",
     location: "Milan, Italy",
-    description: "A pavilion for the Milano-Cortina 2026 Winter Olympic Games dedicated to the Paralympic spirit, situated in Parco Sempione."
+    description: "A pavilion for the Milano-Cortina 2026 Winter Olympic Games dedicated to the Paralympic spirit, situated in Parco Sempione.",
+    thumbnail: getImageUrl('../assets/images/stories-pavilion/thumbnail.jpg'),
+    gallery: [
+      getImageUrl('../assets/images/stories-pavilion/image-1.jpg'),
+      getImageUrl('../assets/images/stories-pavilion/image-2.jpg'),
+      getImageUrl('../assets/images/stories-pavilion/image-3.jpg'),
+    ]
   },
   {
     slug: "tattva",
@@ -31,7 +55,13 @@ export const projects: Project[] = [
     category: "Residential",
     year: "2024",
     location: "Kanpur, India",
-    description: "Capturing the balance between a free-spirited ambiance and a deep connection to nature. A harmonious dialogue between tradition and modern design."
+    description: "Capturing the balance between a free-spirited ambiance and a deep connection to nature. A harmonious dialogue between tradition and modern design.",
+    thumbnail: getImageUrl('../assets/images/tattva/thumbnail.jpg'),
+    gallery: [
+      getImageUrl('../assets/images/tattva/image-1.jpg'),
+      getImageUrl('../assets/images/tattva/image-2.jpg'),
+      getImageUrl('../assets/images/tattva/image-3.jpg'),
+    ]
   },
   {
     slug: "lake-house",
@@ -39,7 +69,13 @@ export const projects: Project[] = [
     category: "Internship (RP Interiors)",
     year: "2025",
     location: "Liguria, Italy",
-    description: "An intimate spatial experience integrating wood and glass. Mirrors visually expand the interior, enhancing depth and openness."
+    description: "An intimate spatial experience integrating wood and glass. Mirrors visually expand the interior, enhancing depth and openness.",
+    thumbnail: getImageUrl('../assets/images/lake-house/thumbnail.jpg'),
+    gallery: [
+      getImageUrl('../assets/images/lake-house/image-1.jpg'),
+      getImageUrl('../assets/images/lake-house/image-2.jpg'),
+      getImageUrl('../assets/images/lake-house/image-3.jpg'),
+    ]
   },
   {
     slug: "earth-and-aether",
@@ -47,7 +83,13 @@ export const projects: Project[] = [
     category: "Competition",
     year: "2025",
     location: "Conceptual",
-    description: "An amphitheater imagined as a spiritual journey. An inverted metal-mesh dome and reflecting water pool create a dialogue between soul and nature."
+    description: "An amphitheater imagined as a spiritual journey. An inverted metal-mesh dome and reflecting water pool create a dialogue between soul and nature.",
+    thumbnail: getImageUrl('../assets/images/earth-and-aether/thumbnail.jpg'),
+    gallery: [
+      getImageUrl('../assets/images/earth-and-aether/image-1.jpg'),
+      getImageUrl('../assets/images/earth-and-aether/image-2.jpg'),
+      getImageUrl('../assets/images/earth-and-aether/image-3.jpg'),
+    ]
   }
 ];
 

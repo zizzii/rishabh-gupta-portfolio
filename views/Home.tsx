@@ -47,7 +47,7 @@ const Home: React.FC = () => {
             >
               <div className="relative w-full aspect-[4/3] bg-[#f0f0f0] overflow-hidden mb-6 transition-all duration-700 ease-out group-hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] group-hover:-translate-y-1">
                 <LazyImage 
-                  src={`https://picsum.photos/seed/${project.slug}/1200/900`} 
+                  src={project.thumbnail} 
                   alt={project.title}
                   className="w-full h-full object-cover filter grayscale contrast-[0.9] brightness-[1.05] group-hover:scale-105 transition-all duration-700 ease-out"
                 />

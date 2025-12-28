@@ -13,8 +13,8 @@ const ProjectDetail: React.FC = () => {
     return <Navigate to="/" replace />;
   }
 
-  // Generate deterministic placeholder images based on slug
-  const images = [1, 2, 3, 4].map(i => `https://picsum.photos/seed/${slug}-${i}/1600/1200`);
+  // Use gallery images from project data (supports variable image counts)
+  const images = project.gallery;
 
   return (
     <motion.div 
@@ -63,22 +63,28 @@ const ProjectDetail: React.FC = () => {
       {/* Scrollable Right Content - Images */}
       <div className="w-full md:w-2/3 bg-white px-6 md:px-12 pt-0 md:pt-32 pb-32">
         <div className="flex flex-col space-y-16 md:space-y-32">
-          {images.map((src, idx) => (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-10%" }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              key={idx}
-              className="w-full bg-[#f9f9f9]"
-            >
-               <LazyImage 
-                src={src} 
-                alt={`${project.title} view ${idx + 1}`} 
-                className="w-full h-auto object-cover grayscale brightness-[1.02] contrast-[0.95] transition-opacity duration-700"
-              />
-            </motion.div>
-          ))}
+          {images.length > 0 ? (
+            images.map((src, idx) => (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-10%" }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                key={idx}
+                className="w-full bg-[#f9f9f9]"
+              >
+                 <LazyImage 
+                  src={src} 
+                  alt={`${project.title} view ${idx + 1}`} 
+                  className="w-full h-auto object-cover grayscale brightness-[1.02] contrast-[0.95] transition-opacity duration-700"
+                />
+              </motion.div>
+            ))
+          ) : (
+            <div className="text-center text-neutral-400 text-sm py-16">
+              Images will be available after running: npm run extract-images
+            </div>
+          )}
         </div>
         
         {/* Next Project Link */}
