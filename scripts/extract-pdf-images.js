@@ -40,7 +40,7 @@ const PROJECT_SLUGS = [
 
 // Get PDF path from command line or use default
 const pdfPath = process.argv[2] || path.join(projectRoot, 'portfolio_Rishabh Gupta_Nov2025.pdf');
-const outputBaseDir = path.join(projectRoot, 'src', 'assets', 'images');
+const outputBaseDir = path.join(projectRoot, 'assets', 'images');
 
 // Ensure output directories exist
 PROJECT_SLUGS.forEach(slug => {
