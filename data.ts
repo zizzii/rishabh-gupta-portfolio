@@ -139,7 +139,7 @@ export const profile: Profile = {
       year: "2024"
     },
     {
-      title: ".Erasmus Workshops & Exchange Enhance Programs",
+      title: "Erasmus Workshops & Exchange Enhance Programs",
       dates: "2023–2025",
       description: "Attended multiple workshops across European countries under Erasmus initiatives, gaining cross-cultural design exposure and collaboration experience."
     }
