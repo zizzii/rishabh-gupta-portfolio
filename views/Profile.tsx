@@ -65,7 +65,7 @@ const Profile: React.FC = () => {
 
           <div className="space-y-12">
             <div>
-              <h3 className="text-sm uppercase tracking-widest text-neutral-400 mb-8">Experience</h3>
+              <h3 className="text-xs uppercase tracking-widest text-neutral-400 mb-6">Experience</h3>
               
               <div className="pl-4 border-l border-neutral-200 space-y-10">
                 <div>
