@@ -49,7 +49,7 @@ const Home: React.FC = () => {
                 <LazyImage 
                   src={project.thumbnail} 
                   alt={project.title}
-                  className="w-full h-full object-cover filter grayscale contrast-[0.9] brightness-[1.05] group-hover:scale-105 transition-all duration-700 ease-out"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700 ease-out"
                 />
                 <div className="absolute inset-0 bg-white/0 group-hover:bg-white/5 transition-colors duration-500" />
               </div>

@@ -76,7 +76,7 @@ const ProjectDetail: React.FC = () => {
                  <LazyImage 
                   src={src} 
                   alt={`${project.title} view ${idx + 1}`} 
-                  className="w-full h-auto object-cover grayscale brightness-[1.02] contrast-[0.95] transition-opacity duration-700"
+                  className="w-full h-auto object-cover transition-opacity duration-700"
                 />
               </motion.div>
             ))
