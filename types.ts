@@ -9,6 +9,26 @@ export interface Project {
   gallery: string[];
 }
 
+export interface Education {
+  institution: string;
+  degree?: string;
+  dates: string;
+}
+
+export interface ExtraCurricular {
+  title: string;
+  dates?: string;
+  year?: string;
+  description?: string;
+}
+
+export interface Experience {
+  company: string;
+  dates?: string;
+  year?: string;
+  description?: string;
+}
+
 export interface Profile {
   name: string;
   bio: string;
@@ -17,4 +37,9 @@ export interface Profile {
     phone: string;
     location: string;
   };
+  education: Education[];
+  extraCurriculars: ExtraCurricular[];
+  internships: Experience[];
+  professionalExperience: Experience[];
+  selfEmployment: Experience[];
 }

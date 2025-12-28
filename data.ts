@@ -100,5 +100,79 @@ export const profile: Profile = {
     email: "rishabh.gupta@mail.polimi.it",
     phone: "+39 351 372 6677",
     location: "Milan, Italy"
-  }
+  },
+  education: [
+    {
+      institution: "Swaraj India Public School",
+      dates: "2000–2015"
+    },
+    {
+      institution: "Babu Banarasi Das University",
+      degree: "Bachelor of Architecture (B.Arch)",
+      dates: "2015–2020"
+    },
+    {
+      institution: "Politecnico di Milano",
+      degree: "Master of Science (M.Sc) in Interior and Spatial Design",
+      dates: "2023–2025"
+    }
+  ],
+  extraCurriculars: [
+    {
+      title: "National Association of Students of Architecture (NASA), India",
+      year: "2017"
+    },
+    {
+      title: "Annual NASA Design Competition (ANDC)",
+      year: "2017"
+    },
+    {
+      title: "NSS & UNICEF Programs",
+      dates: "2016–2021"
+    },
+    {
+      title: "International Architectural Competitions & Workshops",
+      dates: "2020–2025"
+    },
+    {
+      title: "IASDR Design Congress & Digital Design Days",
+      year: "2024"
+    },
+    {
+      title: ".Erasmus Workshops & Exchange Enhance Programs",
+      dates: "2023–2025",
+      description: "Attended multiple workshops across European countries under Erasmus initiatives, gaining cross-cultural design exposure and collaboration experience."
+    }
+  ],
+  internships: [
+    {
+      company: "Future Construction",
+      year: "2016"
+    },
+    {
+      company: "NECL (A Unit of National Building Construction Corporation)",
+      dates: "2018–2019"
+    },
+    {
+      company: "R.P. Interior Design S.a.s., Milan",
+      year: "2025"
+    }
+  ],
+  professionalExperience: [
+    {
+      company: "Lomos Enterprise",
+      dates: "2020–2021"
+    },
+    {
+      company: "Intaglio",
+      year: "2021"
+    }
+  ],
+  selfEmployment: [
+    {
+      company: "VEUM Atelier",
+      dates: "2021–2025",
+      description: "Co-founded an architectural and design firm. Led and executed over 10 theme-based interior projects — residential, commercial, and industrial — from conceptual sketches to final handover, integrating diverse design styles and client requirements."
+    }
+  ]
 };

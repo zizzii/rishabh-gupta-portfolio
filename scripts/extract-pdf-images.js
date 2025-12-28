@@ -1,16 +1,23 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import * as pdfjsLib from 'pdfjs-dist';
-import { createCanvas } from 'canvas';
+import { createCanvas, ImageData } from 'canvas';
+
+// Make ImageData available globally for pdfjs-dist legacy build
+if (typeof globalThis.ImageData === 'undefined') {
+  globalThis.ImageData = ImageData;
+}
+
+// Use legacy build for Node.js compatibility
+import * as pdfjsLib from 'pdfjs-dist/legacy/build/pdf.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const projectRoot = path.resolve(__dirname, '..');
 
-// Set up pdfjs worker - try to find it locally, fallback to disabling
+// Set up pdfjs worker - use legacy worker for Node.js
 try {
-  const workerPath = path.join(projectRoot, 'node_modules', 'pdfjs-dist', 'build', 'pdf.worker.min.mjs');
+  const workerPath = path.join(projectRoot, 'node_modules', 'pdfjs-dist', 'legacy', 'build', 'pdf.worker.min.mjs');
   if (fs.existsSync(workerPath)) {
     pdfjsLib.GlobalWorkerOptions.workerSrc = `file://${workerPath}`;
   } else {
@@ -73,10 +80,18 @@ async function extractImagesFromPDF() {
       const canvas = createCanvas(viewport.width, viewport.height);
       const context = canvas.getContext('2d');
       
-      await page.render({
+      // Ensure canvas is properly set up for pdfjs-dist legacy build
+      const renderContext = {
         canvasContext: context,
-        viewport: viewport
-      }).promise;
+        viewport: viewport,
+        // Add transform to ensure proper rendering
+        transform: null,
+        // Disable text layer and annotation layer for image extraction
+        textLayer: null,
+        annotationLayer: null
+      };
+      
+      await page.render(renderContext).promise;
 
       // Get current project (you may need to adjust this logic based on PDF structure)
       // For now, we'll distribute pages evenly or you can manually map

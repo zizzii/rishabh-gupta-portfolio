@@ -4,7 +4,6 @@ import { profile } from '../data';
 
 const Navbar: React.FC = () => {
   const location = useLocation();
-  const isHome = location.pathname === '/';
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 flex justify-between items-baseline px-6 py-6 md:px-12 md:py-8 bg-white/90 backdrop-blur-sm transition-all duration-300">
@@ -27,12 +26,6 @@ const Navbar: React.FC = () => {
         >
           Profile
         </Link>
-        <a 
-          href={`mailto:${profile.contact.email}`}
-          className="hover:text-neutral-900 transition-colors uppercase hidden md:inline-block"
-        >
-          Contact
-        </a>
       </div>
     </nav>
   );
